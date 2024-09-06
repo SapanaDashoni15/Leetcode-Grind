@@ -1,18 +1,18 @@
 class Solution {
 public:
     
-    void fun(int start, int end, vector<char>& s) {
-        if(start >= end) {
+    void fun(int i, int n, vector<char>& s) {
+        if(i >= n/2) {
             return;
         }
         
-        swap(s[start], s[end]);
-        fun(start+1, end-1,s);
+        swap(s[i], s[n-i-1]);
+        fun(i+1,n,s);
     }
     
     void reverseString(vector<char>& s) {
-        int n = s.size()-1;
-        fun(0, n,s);
+        int n = s.size();
+        fun(0, n , s);
 
     }
 };
